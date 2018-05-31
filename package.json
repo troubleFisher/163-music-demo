@@ -1,7 +1,6 @@
 {
   "name": "163music-demo-1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "leancloud-storage": "^3.6.0"
-  }
+    "express": "^4.16.3",
+    "leancloud-storage": "^3.6.8",
+    "plupload": "^2.3.6",
+    "qiniu-js": "^1.0.24"
+  },
+  "devDependencies": {},
+  "description": ""
 }
