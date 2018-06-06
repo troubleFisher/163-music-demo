@@ -40,7 +40,7 @@ var server = http.createServer(function(request, response){
             scope: '163-music-demo-1',
         };
         var putPolicy = new qiniu.rs.PutPolicy(options);
-        var uploadToken=putPolicy.uploadToken(mac);
+        var uploadToken = putPolicy.uploadToken(mac);
 
         response.write(`
         {
@@ -48,35 +48,35 @@ var server = http.createServer(function(request, response){
         }
         `)
         response.end()
-    }else {
-        response.statusCode = 200
-        response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
-        response.setHeader('access-control-allow-origin','*')
+    // }else {
+    //     response.statusCode = 200
+    //     response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
+    //     response.setHeader('access-control-allow-origin','*')
+    //
+    //     // // response.write(require("./src/admin.html"))
+    //     var pathname = url.parse(request.url).path;
+    //     fs.readFile("./"+pathname.substr(1), function (err, data) {
+    //         if (err) {
+    //             console.log(err);
+    //             // HTTP 状态码: 404 : NOT FOUND
+    //             // Content Type: text/plain
+    //             response.writeHead(404, {'Content-Type': 'text/html'});
+    //         } else {
+    //             // HTTP 状态码: 200 : OK
+    //             // Content Type: text/plain
+    //             response.writeHead(200, {'Content-Type': 'text/html'});
+    //
+    //             // 响应文件内容
+    //             response.write(data.toString());
+    //         }
+    //         //  发送响应数据
+    //         response.end();
+    //         // response.end()
+    //     })
 
-        // // response.write(require("./src/admin.html"))
-        var pathname = url.parse(request.url).path;
-        fs.readFile("./"+pathname.substr(1), function (err, data) {
-            if (err) {
-                console.log(err);
-                // HTTP 状态码: 404 : NOT FOUND
-                // Content Type: text/plain
-                response.writeHead(404, {'Content-Type': 'text/html'});
-            } else {
-                // HTTP 状态码: 200 : OK
-                // Content Type: text/plain
-                response.writeHead(200, {'Content-Type': 'text/html'});
-
-                // 响应文件内容
-                response.write(data.toString());
-            }
-            //  发送响应数据
-            response.end();
-            // response.end()
-        })
-
-    // }else{
-    //     response.statusCode = 404
-    //     response.end()
+    }else{
+        response.statusCode = 404
+        response.end()
     }
 
     /******** 代码结束，下面不要看 ************/

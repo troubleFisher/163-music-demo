@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do something meaningful</title>
+    <script>
+        //这个类似vue.js
+        var scope = {},
+            initName = "";
+        Object.defineProperty(scope,"name",{
+            set(value) {
+                bind.children[0].innerText = value;
+                input.value = value;
+                initName = value;
+            },
+            get() {
+                return initName;
+            }
+        });
+    </script>
+</head>
+<body>
+<input id="input" type="text">
+<div id="bind"><span></span></div>
+<script>
+    // 这里是业务代码
+    scope.name = "wwwwn";
+    bind.children[0].innerText = scope.name;
+
+    input.addEventListener("keyup", function () {
+        // alert(this.value)
+        scope.name = this.value;
+    });
+</script>
+</body>
+</html>
