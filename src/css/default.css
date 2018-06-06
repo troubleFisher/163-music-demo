@@ -1,0 +1,52 @@
+*{  margin: 0;  padding: 0;  }
+*{  box-sizing: border-box;  }
+*::before,*::after{  box-sizing: border-box;  }
+ul,li{ list-style: none; }
+a{  text-decoration: none;  color: inherit;  }
+body{  font-size: 14px;  line-height: 1.5;  }
+
+/* layout */
+.adminPage{  display: flex;  height: 100vh;  }
+.adminPage > aside{  width: 200px;  display: flex; flex-direction: column }
+.adminPage > main{  flex-grow: 1; padding: 20px; }
+
+/* aside */
+aside > .newSong{
+    padding: 10px;
+    text-align: center;
+}
+aside > .newSong.active{
+    background-color: beige;
+}
+aside > .songList{
+    flex-grow: 1;
+}
+aside > .songList > ul{
+    text-align: left;
+    border-top: 1px solid #999999;
+}
+aside > .songList > ul > li{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+}
+aside > .songList > ul > li .active{
+    background-color: beige;
+}
+aside > .uploadAera{
+
+}
+aside > .uploadAera > .draggable{
+    text-align: center;
+    padding:20px;
+    border-radius: 6px;
+    border:2px dashed #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+aside > .uploadAera > .draggable > .clickable{
+    cursor: pointer;
+}
+
+/* main */
